@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Reactclass</title>
+  </head>
+  <body>
+    <label for="markInput">Your mark: </label>
+    <input type="number" class="markInput" id="markInput" placeholder="Input your mark here..." style="padding-left: 20px">
+    <button class="markCalBtn">Rank now !</button>
+    <script>
+      /* tạo 1 UI đơn giản 
+      1 textbox nhập điểm
+      1 button "tính"
+      điểm < 0 hoặc > 10 thì alert ko hợp lệ
+      0-4.9 : Yeu
+      5-6.4: TB
+      6.5-8: Kha
+      8-10: Giỏi
+      */
+      let calBtn = document.querySelector(".markCalBtn")
+      
+      calBtn.addEventListener("click", function(){
+        let inputMark = document.querySelector(".markInput").value;
+        if ((inputMark < 0) || (inputMark > 10)){
+          alert("Invalid mark - Điểm không hợp lệ");
+        } else if ((inputMark >= 0) && (inputMark <= 4.9)){
+          alert("Poor - Yếu");
+        } else if ((inputMark >= 5) && (inputMark <= 6.4)){
+          alert("Average - Trung Bình");
+        } else if ((inputMark >= 6.5) && (inputMark <= 7.9)){
+          alert("Good - Khá");
+        } else if ((inputMark >= 8) && (inputMark <= 10)){
+          alert("Exelent - Giỏi");
+        }
+      })
+
+    </script>
+  </body>
+</html>
